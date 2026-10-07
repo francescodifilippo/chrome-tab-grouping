@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "GroupThemAll",
+  "version": "1.1.0",
+  "description": "Group all your ungrouped tabs in one click. Name the group before creating it.",
+  "minimum_chrome_version": "89",
+  "permissions": [
+    "tabGroups",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "group-ungrouped-tabs": {
+      "suggested_key": {
+        "default": "Alt+G",
+        "mac": "Alt+G"
+      },
+      "description": "Group all ungrouped tabs"
+    }
+  }
+}

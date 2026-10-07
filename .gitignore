@@ -1,0 +1,8 @@
+
+# Local agent data and signing material
+.claude/
+.remember/
+*.jks
+*.keystore
+.env
+.env.*

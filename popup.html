@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 300px;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      padding: 16px;
+    }
+
+    h1 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    #status {
+      font-size: 13px;
+      margin-bottom: 12px;
+      min-height: 18px;
+      color: #a0a0b8;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      color: #8a8aaa;
+      margin-bottom: 4px;
+    }
+
+    #groupName {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #3a3a5c;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: "Segoe UI Mono", "Consolas", monospace;
+      background: #2a2a4a;
+      color: #e0e0e0;
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    #groupName:focus { border-color: #4361ee; }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      background: #4361ee;
+      color: #fff;
+      transition: background 0.15s;
+    }
+
+    button:hover { background: #3a56d4; }
+    button:active { background: #2f48b8; }
+    button:disabled { background: #3a3a5c; color: #7a7a9a; cursor: default; }
+
+    .shortcut {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #6a6a8a;
+      text-align: center;
+    }
+
+    kbd {
+      background: #2a2a4a;
+      border: 1px solid #3a3a5c;
+      border-radius: 3px;
+      padding: 1px 5px;
+      font-family: inherit;
+      font-size: 11px;
+    }
+
+    #chromeWarning {
+      display: none;
+      margin-top: 12px;
+      padding: 8px 10px;
+      background: #2a1a00;
+      border: 1px solid #7a4a00;
+      border-radius: 6px;
+      font-size: 11px;
+      color: #f0a040;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h1>GroupThemAll</h1>
+  <div id="status"></div>
+  <label for="groupName">Group's name:</label>
+  <input type="text" id="groupName" spellcheck="false">
+  <button id="groupBtn">Group ungrouped tabs</button>
+  <div class="shortcut" id="shortcutDisplay">Shortcut: ...</div>
+  <div id="chromeWarning">
+    ⚠ Known Chrome bug (fixed in v146): the group name may not be saved automatically.
+    If it disappears, click the group header and rename it to force the save.
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
